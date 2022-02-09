@@ -20,9 +20,10 @@ function creationCarte(user) {
         <h2>${user.name}</h2>
         <ul class="cont-infos">
             <li class="followers">Followers : ${user.followers}</li>
+            <li class="following">Following : ${user.following}</li>
             <li class="repos">Repos : ${user.public_repos}</li>
             <li class="bio">Bio : ${user.bio}</li>
-            <a href=${user.html_url} target="_blank">Lien du profil</a>
+            <a class="link" href=${user.html_url} target="_blank">Lien du profil</a>
         </ul>
     </div>
     `
