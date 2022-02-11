@@ -14,6 +14,9 @@ async function dataGithub(utilisateur) {
 
 // Affichage de la carte d'utilisateur
 function creationCarte(user) {
+    const date = new Date(`${user.created_at}`)
+    const formated_date = date.getDate() + '/' + (date.getMonth() + 1)  + '/' + date.getFullYear() + ' à ' + date.getUTCHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+
     const carteHTML = `
     <div class="carte">
         <img src="${user.avatar_url}" alt="icone" class="avatar">
@@ -23,6 +26,7 @@ function creationCarte(user) {
             <li class="following">Following : ${user.following}</li>
             <li class="repos">Repos : ${user.public_repos}</li>
             <li class="bio">Bio : ${user.bio}</li>
+            <li class="created">Date de création : ${formated_date}</li>
             <a class="link" href=${user.html_url} target="_blank">Lien du profil</a>
         </ul>
     </div>
